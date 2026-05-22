@@ -1,3 +1,9 @@
+  <?php
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+    ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -46,28 +52,10 @@
                                                   <div class="input-group mb-3">
                                                       <select name="crearInvitado" class="form-control" required>
                                                           <option value="">Seleccione invitado</option>
+                                                          <option value="">Franklin Briceño</option>
+                                                          <option value="">Alexander Briceño</option>
 
-                                                          <?php
-                                                            $conexion = Conexion::conectar();
-                                                            $stmt = $conexion->prepare("
 
-                                                                        SELECT invitados.id_invitado,
-                                                                            estudiantes.nombre,
-                                                                            estudiantes.apellido
-                                                                        FROM invitados
-                                                                        INNER JOIN estudiantes
-                                                                        ON invitados.id_estudiante = estudiantes.id_estudiante
-                                                                    ");
-                                                            $stmt->execute();
-                                                            $invitados = $stmt->fetchAll();
-                                                            foreach ($invitados as $value) {
-                                                                echo '
-                                                                        <option value="' . $value["id_invitado"] . '">
-                                                                            ' . $value["nombre"] . ' ' . $value["apellido"] . '
-                                                                        </option>
-                                                                    ';
-                                                            }
-                                                            ?>
                                                       </select>
                                                       <div class="input-group-append">
                                                           <span class="input-group-text">
