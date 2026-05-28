@@ -4,13 +4,12 @@ class ControladorIngreso
 {
     public function ctrlGuardarIngreso()
     {
-        if (
-            isset($_POST['crearInvitado']) &&
-            isset($_POST['crearCantidad']) &&
-            isset($_POST['crearFecha'])
-        ) {
-            $data = array(
 
+        if (
+            isset($_POST['crearInvitado']) && isset($_POST['crearCantidad']) && isset($_POST['crearFecha'])
+        ) {
+
+            $data = array(
                 "crearInvitado" => $_POST['crearInvitado'],
                 "crearCantidad" => $_POST['crearCantidad'],
                 "crearFecha" => $_POST['crearFecha']
