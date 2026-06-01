@@ -2,6 +2,7 @@
 
 class ControladorIngreso
 {
+    #accion para guardar un ingreso desde el formulario
     public function ctrlGuardarIngreso()
     {
 
@@ -49,5 +50,12 @@ class ControladorIngreso
                 </script>';
             }
         }
+    }
+
+    #accion para preparar datos para una consulta de ingresos
+    public function ctrlCargarDatosIngresos()
+    {
+        $res = ModeloIngreso::traerDatosIngresos();
+        return $res;
     }
 }

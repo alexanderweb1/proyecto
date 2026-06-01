@@ -17,4 +17,11 @@ class ModeloIngreso
             return "Error";
         }
     }
+
+    public static function traerDatosIngresos()
+    {
+        $stm = conexion::conectar()->prepare("SELECT * FROM ingresos");
+        $stm->execute();
+        return $stm->fetchAll();
+    }
 }

@@ -45,11 +45,12 @@
 
                                                 <div class="input-group mb-3">
                                                     <select name="crearInvitado" class="form-control" required>
-                                                        <option value="">Seleccione invitado</option>
-                                                        <option value="3">Franklin Briceño</option>
-                                                        <option value="4">Alexander Briceño</option>
-                                                        <option value="5">Anto Briceño</option>
-                                                        <option value="6">Alex Paul Briceño</option>
+                                                        <option value="0">Seleccione invitado</option>
+
+                                                        <option value="1">Franklin Briceño(1)</option>
+                                                        <option value="2">Alexander Briceño(2)</option>
+                                                        <option value="3">Anto Torres(3)</option>
+                                                        <option value="4">Alex Paul Briceño(4)</option>
                                                     </select>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">
@@ -77,7 +78,7 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="input-group mb-3">
-                                                    <input type="date"
+                                                    <input type="datetime-local"
                                                         class="form-control"
                                                         name="crearFecha"
                                                         required>
@@ -110,6 +111,50 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Tabla de para presentar los ingresos -->
+                <table id="tableIngresos" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ID_INVITADO</th>
+                            <th>CANTIDAD_PERSONAS</th>
+                            <th>FECHA</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $dataIngresos = $objIngreso->ctrlCargarDatosIngresos();
+
+                        foreach ($dataIngresos as $key => $value) {
+                        ?>
+                            <tr>
+                                <td><?php echo $value['id_ingreso']; ?></td>
+                                <td><?php echo $value['id_inivitado']; ?></td>
+                                <td><?php echo $value['cantidad_personas']; ?></td>
+                                <td><?php echo $value['fecha']; ?></td>
+                                <td>
+                                    <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt text-dark"></i></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Rendering engine</th>
+                            <th>Browser</th>
+                            <th>Platform(s)</th>
+                            <th>Engine version</th>
+                            <th>CSS grade</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <!-- Fin de la tabla de ingresos -->
+
+
             </div>
             <!-- /.card-body -->
         </div>
