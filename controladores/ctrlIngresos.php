@@ -18,6 +18,7 @@ class ControladorIngreso
 
             $res = ModeloIngreso::guardarIngreso($data);
             if ($res == "OK") {
+
                 echo '<script>
                     Swal.fire({
                         icon:"success",
@@ -34,6 +35,7 @@ class ControladorIngreso
                     });
                 </script>';
             } else {
+
                 echo '<script>
                     Swal.fire({
                         icon:"error",

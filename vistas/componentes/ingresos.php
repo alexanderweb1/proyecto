@@ -25,7 +25,6 @@
             <div class="card-header">
                 <!-- Trigger the modal with a button -->
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus-square"></i> Nuevo Ingreso</button>
-
             </div>
             <div class="card-body">
                 <!-- Modal -->
@@ -102,11 +101,14 @@
                                         data-dismiss="modal">
                                         Cerrar
                                     </button>
+
                                 </div>
+
                                 <?php
                                 $objIngreso  = new ControladorIngreso();
                                 $objIngreso->ctrlGuardarIngreso();
                                 ?>
+
                             </form>
                         </div>
                     </div>
