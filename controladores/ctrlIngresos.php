@@ -55,8 +55,10 @@ class ControladorIngreso
     }
 
     #accion para preparar datos para una consulta de ingresos
+
     public function ctrlCargarDatosIngresos()
     {
+        //llamar a la funcion para traer los datos de los ingresos
         $res = ModeloIngreso::traerDatosIngresos();
         return $res;
     }

@@ -19,8 +19,10 @@ class ModeloIngreso
     }
 
     //funcion para traer los datos de los ingresos
+
     public static function traerDatosIngresos()
     {
+
         $stm = conexion::conectar()->prepare("SELECT * FROM ingresos");
         $stm->execute();
         return $stm->fetchAll();

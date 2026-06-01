@@ -46,10 +46,10 @@
                                                     <select name="crearInvitado" class="form-control" required>
                                                         <option value="0">Seleccione invitado</option>
 
-                                                        <option value="1">Franklin Briceño(1)</option>
-                                                        <option value="2">Alexander Briceño(2)</option>
-                                                        <option value="3">Anto Torres(3)</option>
-                                                        <option value="4">Alex Paul Briceño(4)</option>
+                                                        <option value="1">Franklin Briceño (1)</option>
+                                                        <option value="2">Alexander Briceño (2)</option>
+                                                        <option value="3">Anto Torres (3)</option>
+                                                        <option value="4">Alex Paul Briceño (4)</option>
                                                     </select>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">
@@ -136,14 +136,18 @@
                                 <td><?php echo $value['id_inivitado']; ?></td>
                                 <td><?php echo $value['cantidad_personas']; ?></td>
                                 <td><?php echo $value['fecha']; ?></td>
+
                                 <td>
-                                    <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                    <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt text-dark"></i></a>
+                                    <a href="#" class="btn btn-warning text-dark"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="btn btn-danger text-dark"><i class="fas fa-trash-alt"></i></a>
                                 </td>
+
                             </tr>
                         <?php } ?>
 
                     </tbody>
+
+                    <!-- Pie de tabla -->
                     <tfoot>
                         <tr>
                             <th>Rendering engine</th>
