@@ -1,11 +1,9 @@
 <?php
-
 class ControladorIngreso
 {
     #accion para guardar un ingreso desde el formulario
     public function ctrlGuardarIngreso()
     {
-
         if (
             isset($_POST['crearInvitado']) && isset($_POST['crearCantidad']) && isset($_POST['crearFecha'])
         ) {
@@ -17,6 +15,9 @@ class ControladorIngreso
             );
 
             $res = ModeloIngreso::guardarIngreso($data);
+            echo $res;
+
+
             if ($res == "OK") {
 
                 echo '<script>
@@ -33,7 +34,7 @@ class ControladorIngreso
 
                         }
                     });
-                </script>';
+                    </script>';
             } else {
 
                 echo '<script>
@@ -55,11 +56,10 @@ class ControladorIngreso
     }
 
     #accion para preparar datos para una consulta de ingresos
-
-    public function ctrlCargarDatosIngresos()
+    public static function ctrlCargarDatosIngresos($parametros, $id)
     {
         //llamar a la funcion para traer los datos de los ingresos
-        $res = ModeloIngreso::traerDatosIngresos();
+        $res = ModeloIngreso::traerDatosIngresos($parametros, $id);
         return $res;
     }
 }

@@ -15,8 +15,10 @@ session_start();
   <link rel="stylesheet" href="vistas/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/adminlte.min.css">
+
   <!-- Sweetalert2-->
   <link rel="stylesheet" href="vistas/plugins/sweetalert2/sweetalert2.min.css">
+  <script src="vistas/plugins/sweetalert2/sweetalert2.min.js"></script>
   <!-- Fin de Sweetalert2-->
 
   <!-- DataTables  & Plugins -->
