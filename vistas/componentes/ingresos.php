@@ -69,6 +69,7 @@
                                                 <div class="input-group mb-3">
                                                     <input type="number" class="form-control" name="crearCantidad" placeholder="Cantidad de personas"
                                                         min="1"
+                                                        step="1"
                                                         required>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">
@@ -86,6 +87,7 @@
                                                     <input type="datetime-local"
                                                         class="form-control"
                                                         name="crearFecha"
+                                                        step="1"
                                                         required>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">
@@ -181,6 +183,7 @@
                                                         id="editarFecha"
                                                         class="form-control"
                                                         name="editarFecha"
+                                                        step="1"
                                                         required>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">
@@ -203,7 +206,7 @@
                                 </div>
 
                                 <?php
-
+                                $objIngreso->ctrlActualizarIngreso();
                                 ?>
 
                             </form>
@@ -236,9 +239,21 @@
 
                                 <td>
                                     <div class="btn-group">
-                                        <button class="btn btn-warning"><i class="fas fa-edit editarIngresoTabla" data-toggle="modal" data-target="#myModalEditar" id_ingreso="<?php echo $value['id_ingreso']; ?>"></i></button>
+                                        <button class="btn btn-warning editarIngresoTabla"
+                                            data-toggle="modal"
+                                            data-target="#myModalEditar"
+                                            id_ingreso="<?php echo $value['id_ingreso']; ?>">
 
-                                        <button class="btn btn-danger"><i class="fas fa-trash-alt eliminarIngresoTabla" data-toggle="modal" data-target="#myModalEliminar"></i></button>
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+
+                                        <button class="btn btn-danger eliminarIngresoTabla"
+                                            data-toggle="modal"
+                                            data-target="#myModalEliminar"
+                                            id_ingreso="<?php echo $value['id_ingreso']; ?>">
+
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
                                     </div>
                                 </td>
 

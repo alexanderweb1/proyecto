@@ -34,6 +34,7 @@ $(function () {
         $("#editarIdIngreso").val(respuesta.id_ingreso);
         $("#editarInvitado").val(respuesta.id_invitado);
         $("#editarCantidad").val(respuesta.cantidad_personas);
+        
         let fecha = respuesta.fecha.replace(" ", "T");
         $("#editarFecha").val(fecha);
         
