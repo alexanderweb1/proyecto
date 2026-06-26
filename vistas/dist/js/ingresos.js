@@ -45,4 +45,76 @@ $(function () {
               console.log("Detalles del servidor:", xhr.responseText);
           }
     })
+    
   });
+
+  //funcion para eliminar un ingreso
+  $(".eliminarIngresoTabla").click(function () {
+
+    var id_ingreso = $(this).attr("id_ingreso");
+  
+    var datos = new FormData();
+    datos.append("id_ingreso", id_ingreso);
+    datos.append("operacion", "eliminar");
+  
+    Swal.fire({
+      title: "Está seguro que desea eliminar los datos del ingreso?",
+      text: "No podrá recuperar los datos!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, eliminar!",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+  
+      if (result.value) {
+  
+        $.ajax({
+          url: "ajax/ajaxIngresos.php",
+          method: "POST",
+          data: datos,
+          cache: false,
+          contentType: false,
+          processData: false,
+          dataType: "json",
+  
+          success: function (respuesta) {
+  
+            if (respuesta == 1) {
+  
+              Swal.fire({
+                icon: "success",
+                title: "Eliminado",
+                text: "Datos eliminados con éxito!",
+                showConfirmButton: true,
+                confirmButtonText: "Cerrar",
+              }).then(function (result) {
+  
+                if (result.value) {
+                  window.location = "ingresos";
+                }
+  
+              });
+  
+            } else {
+  
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "No se pudo eliminar los datos!",
+              });
+  
+            }
+  
+          },
+  
+        });
+  
+      }
+  
+    });
+  
+  });
+
+  

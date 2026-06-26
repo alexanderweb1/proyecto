@@ -12,6 +12,12 @@ class ingresosAjax
         $respuesta = ControladorIngreso::ctrlCargarDatosIngresos($parametros, $id);
         echo json_encode($respuesta);
     }
+    public function eliminarIngreso()
+    {
+        $id = $this->id_ingreso;
+        $respuesta = ControladorIngreso::ctrlEliminarIngreso($id);
+        echo json_encode($respuesta);
+    }
 }
 if (isset($_POST["id_ingreso"])) {
     $objIngresosAjax = new ingresosAjax();
@@ -19,6 +25,9 @@ if (isset($_POST["id_ingreso"])) {
     switch ($_POST['operacion']) {
         case 'editar':
             $objIngresosAjax->traerDatosIngresos();
+            break;
+        case 'eliminar':
+            $objIngresosAjax->eliminarIngreso();
             break;
     }
 }

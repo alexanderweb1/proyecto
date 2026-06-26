@@ -112,4 +112,10 @@ class ControladorIngreso
             }
         }
     }
+    #funcion para eliminar un ingreso
+    public static function ctrlEliminarIngreso($id)
+    {
+        $res = ModeloIngreso::eliminarIngreso($id);
+        return $res;
+    }
 }

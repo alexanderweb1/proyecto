@@ -197,6 +197,7 @@
                                 </div>
 
                                 <input type="hidden" id="editarIdIngreso" name="editarIdIngreso">
+                                <input type="hidden" id="eliminarIdIngreso" name="eliminarIdIngreso">
 
                                 <div class="modal-footer">
 
@@ -249,7 +250,6 @@
 
                                         <button class="btn btn-danger eliminarIngresoTabla"
                                             data-toggle="modal"
-                                            data-target="#myModalEliminar"
                                             id_ingreso="<?php echo $value['id_ingreso']; ?>">
 
                                             <i class="fas fa-trash-alt"></i>

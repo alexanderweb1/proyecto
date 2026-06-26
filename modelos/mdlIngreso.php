@@ -35,7 +35,7 @@ class ModeloIngreso
         }
     }
 
-    #funcion para guardar un ingreso
+    #funcion para editar un ingreso
     public static function editarDatos($data)
     {
         $stm = Conexion::conectar()->prepare(" UPDATE ingresos SET id_invitado = :id_invitado, cantidad_personas = :cantidad_personas,
@@ -52,6 +52,17 @@ class ModeloIngreso
         } else {
             print_r($stm->errorInfo()); // temporal para depurar
             return "Error";
+        }
+    }
+    #funcion para eliminar un ingreso
+    public static function eliminarIngreso($id)
+    {
+        $stm = conexion::conectar()->prepare("DELETE FROM ingresos WHERE id_ingreso = :id_ingreso");
+        $stm->bindParam(":id_ingreso", $id, PDO::PARAM_INT);
+        if ($stm->execute()) {
+            return "1";
+        } else {
+            return "0";
         }
     }
 }
